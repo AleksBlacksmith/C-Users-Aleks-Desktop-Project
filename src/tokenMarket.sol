@@ -39,7 +39,7 @@ contract tokenMarket {
 
     function sellToken(IData addrData, uint128 price, uint16 year, uint8 month, uint8 day) public {
         // (address secondOwner) = addrData.getSecondOwner();
-        (address addrToken, , , address addrApproveOwner) = addrData.getInfo();
+        (address addrToken, , , address addrApproveOwner) = addrData.getInfo(); // ошибка: Calls to remote contract do not return result
         require(addrApproveOwner == address(this));
         require(addrData == addrToken);
         tvm.accept();
